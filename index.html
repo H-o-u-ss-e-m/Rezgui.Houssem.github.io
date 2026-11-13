@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07080b">
+  <meta name="description" content="Portfolio de Houssem Rezgui — Étudiant-Ingénieur en Génie Logiciel, passionné d'IA Appliquée, Computer Vision et architectures DevOps.">
+  <title>Houssem Rezgui — Étudiant-Ingénieur | IA Appliquée & DevOps</title>
+  
+  <!-- FAVICON -->
+  <link rel="icon" type="image/jpeg" href="assets/images/profile.jpg">
+  <link rel="apple-touch-icon" href="assets/images/profile.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Houssem Rezgui home">
+      <div class="brand-avatar-wrap">
+        <div class="brand-halo"></div>
+        <div class="brand-mark">
+          <span class="brand-letters">HR</span>
+          <span class="brand-status-dot" title="Disponible pour projets & opportunités"></span>
+        </div>
+      </div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">HOUSSEM<span class="brand-dot">.</span></span>
+        <span class="brand-role"><span class="brand-role-arrow">&gt;</span> IA &amp; SOFTWARE</span>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <nav class="nav" id="nav">
+        <a href="#about" data-i18n="nav.about">À propos</a>
+        <a href="#work" data-i18n="nav.work">Projets</a>
+        <a href="#experience" data-i18n="nav.experience">Parcours</a>
+        <a href="#skills" data-i18n="nav.skills">Compétences</a>
+        <a href="#certifications" data-i18n="nav.certifications">Certifications</a>
+        <a class="nav-contact" href="#contact" data-i18n="nav.contact">Contactez-moi ↗</a>
+      </nav>
+
+      <a href="https://github.com/H-o-u-ss-e-m" target="_blank" rel="noreferrer" class="social-btn github" aria-label="GitHub Profile" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/rezgui-houssem-917960271/" target="_blank" rel="noreferrer" class="social-btn linkedin" aria-label="LinkedIn Profile" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.99 0-1.78-.79-1.78-1.78 0-.98.79-1.77 1.78-1.77.99 0 1.78.79 1.78 1.77 0 .99-.79 1.78-1.78 1.78m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+        </svg>
+      </a>
+
+      <div class="lang-switcher" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section-shell" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> <span data-i18n="hero.badge">DISPONIBLE POUR STAGES & PROJETS AMBITIEUX</span>
+          </div>
+          <p class="hero-kicker" data-i18n="hero.kicker">Bonjour, je suis</p>
+          <h1>Houssem<br><span>Rezgui.</span></h1>
+          
+          <div class="hero-role">
+            <span class="role-prefix" data-i18n="hero.prefix">Je conçois</span>
+            <span id="typedRole">des modèles d'IA et de Vision par Ordinateur.</span>
+            <span class="caret">|</span>
+          </div>
+          
+          <p class="hero-intro" data-i18n="hero.intro">
+            Étudiant en <strong>2ᵉ année du cycle ingénieur, spécialité Ingénierie du Développement Logiciel (IDL), à l’Institut Supérieur d’Informatique (ISI – Université de Tunis El Manar)</strong>, je m’intéresse particulièrement au <strong>développement logiciel, à l’intelligence artificielle et aux pratiques DevOps</strong>.
+            <br><br>
+            À travers mes projets académiques et personnels, je développe des solutions combinant <strong>développement Full Stack, intégration de modèles d’IA et Computer Vision</strong>. Je mets également en pratique les approches modernes de l’ingénierie logicielle, notamment la <strong>conteneurisation avec Docker, l’intégration et le déploiement continus (CI/CD) ainsi que l’automatisation des processus de développement</strong>.
+            <br><br>
+            Curieux et motivé par les nouvelles technologies, je souhaite mettre mes compétences au service de projets concrets dans les domaines du <strong>Software Engineering, de l’Intelligence Artificielle et du DevOps</strong>, tout en continuant à développer mon expertise.
+          </p>
+          
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work" data-i18n="hero.btnProjects">Explorer mes projets ↘</a>
+            <a class="button button-outline" href="#contact" data-i18n="hero.btnContact">Prendre contact ↗</a>
+            <a class="social-btn github" href="https://github.com/H-o-u-ss-e-m" target="_blank" rel="noreferrer" aria-label="GitHub Profile" title="GitHub: H-o-u-ss-e-m">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a class="social-btn linkedin" href="https://www.linkedin.com/in/rezgui-houssem-917960271/" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" title="LinkedIn: Rezgui Houssem">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.99 0-1.78-.79-1.78-1.78 0-.98.79-1.77 1.78-1.77.99 0 1.78.79 1.78 1.77 0 .99-.79 1.78-1.78 1.78m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="hero-meta">
+            <span data-i18n="hero.metaLoc">TUNIS, TUNISIE</span>
+            <span data-i18n="hero.metaMobility">MOBILITÉ INTERNATIONALE & DISTANCIEL</span>
+            <span data-i18n="hero.metaMajor">MAJOR DE PROMOTION FSB</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-profile-card">
+            <div class="profile-avatar-wrapper">
+              <img src="assets/images/profile.jpg" alt="Houssem Rezgui" class="profile-avatar-img">
+              <span class="avatar-badge" title="Active"></span>
+            </div>
+            <div class="profile-details">
+              <div class="profile-name">Houssem Rezgui</div>
+              <div class="profile-sub" data-i18n="hero.profileFocus">Spécialisation IA Appliquée & Systèmes DevOps</div>
+              <div class="profile-badges">
+                <span class="pill-badge gold" data-i18n="hero.badgeUs">🇺🇸 Université US Accréditée</span>
+                <span class="pill-badge" data-i18n="hero.badgeMajor">Major Promo (Très Bien)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal-card">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <div class="terminal-title">houssem@isi-node-01: ~</div>
+              <div class="terminal-badge">LIVE 60 FPS</div>
+            </div>
+            
+            <div class="terminal-body">
+              <div class="term-line">
+                <span class="term-prompt">$</span>
+                <span class="term-cmd">docker-compose ps</span>
+              </div>
+              <div class="term-output">
+                NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IMAGE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS<br>
+                yolov8-engine &nbsp;&nbsp; ultralytics:v8 &nbsp; <span class="term-success">Up (healthy)</span><br>
+                api-gateway &nbsp;&nbsp;&nbsp;&nbsp; dotnet-core:8 &nbsp;&nbsp; <span class="term-success">Up (healthy)</span><br>
+                postgres-db &nbsp;&nbsp;&nbsp;&nbsp; postgres:16-al &nbsp; <span class="term-success">Up 5432/tcp</span>
+              </div>
+
+              <div class="term-line">
+                <span class="term-prompt">$</span>
+                <span class="term-cmd">python evaluate_model.py</span>
+              </div>
+              <div class="term-output">
+                [OK] Loaded weights: <span class="term-purple">yolov8x_custom.pt</span><br>
+                [OK] ByteTrack multi-object tracker initialized.<br>
+                <span class="term-cyan">mAP@50: 94.6%</span> · Real-time inference stream active.
+              </div>
+
+              <div class="term-metric-grid">
+                <div class="term-metric">
+                  <span class="term-metric-label">AI INFERENCE RATE</span>
+                  <span class="term-metric-val" id="liveFps">60.2 FPS</span>
+                </div>
+                <div class="term-metric">
+                  <span class="term-metric-label">PIPELINE LATENCY</span>
+                  <span class="term-metric-val" id="liveLatency">11.8 ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll"><span class="scroll-line"></span> <span data-i18n="hero.scroll">DÉFILER POUR DÉCOUVRIR</span></div>
+    </section>
+
+    <!-- TICKER -->
+    <section class="intro-strip" aria-label="Core technologies">
+      <div class="strip-inner">
+        <span><b>✳</b> COMPUTER VISION</span>
+        <span><b>✳</b> YOLOV8 & BYTETRACK</span>
+        <span><b>✳</b> PYTORCH DEEP LEARNING</span>
+        <span><b>✳</b> DOCKER & CONTAINERIZATION</span>
+        <span><b>✳</b> CI/CD GITHUB ACTIONS</span>
+        <span><b>✳</b> .NET CORE & C#</span>
+        <span><b>✳</b> ANGULAR & REACT</span>
+        <span><b>✳</b> SPRING BOOT</span>
+        <span><b>✳</b> RAG & LANGCHAIN AGENTS</span>
+        <span><b>✳</b> POSTGRESQL & SQL SERVER</span>
+        <span><b>✳</b> LINUX & BASH SCRIPTING</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-shell" id="about">
+      <div class="section-heading reveal">
+        <span class="section-number" data-i18n="about.subtitle">01 / À PROPOS</span>
+        <h2 data-i18n="about.title">Allier systèmes intelligents<br>et <em>infrastructures scalables.</em></h2>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-lead reveal">
+          <p data-i18n="about.p1">
+            Actuellement en cycle ingénieur en <strong>Génie Logiciel (IDL) à l'Institut Supérieur d'Informatique (ISI)</strong>, j'ai obtenu ma Licence en Informatique à la Faculté des Sciences de Bizerte avec la <strong>mention Très Bien en tant que Major de promotion</strong>.
+          </p>
+          <p data-i18n="about.p2">
+            Ma passion se situe au carrefour de la <strong>Vision par Ordinateur (Deep Learning, YOLOv8, PyTorch)</strong> et de l'<strong>ingénierie DevOps</strong>. Je m'attache à extraire les modèles IA des carnets de recherche pour les déployer en microservices conteneurisés fiables.
+          </p>
+          <p data-i18n="about.p3">
+            De la mise en place d'une chaîne de suivi d'objets en temps réel (FreshTrack) au système de traçabilité industrielle automatisé chez <strong>SEBN (Sumitomo Electric)</strong> avec des robots PINTO, j'accorde une grande rigueur à l'architecture logicielle.
+          </p>
+        </div>
+        
+        <div class="about-facts reveal">
+          <div class="fact">
+            <span class="fact-value">#1</span>
+            <span class="fact-label" data-i18n="about.statMajor">MAJOR DE PROMOTION<br>FSB INFORMATIQUE</span>
+          </div>
+          <div class="fact">
+            <span class="fact-value">2028</span>
+            <span class="fact-label" data-i18n="about.statGrad">DIPLÔME D'INGÉNIEUR<br>ISI TUNISIE</span>
+          </div>
+          <div class="fact">
+            <span class="fact-value">500+</span>
+            <span class="fact-label" data-i18n="about.statItems">500+ ARTICLES CONNECTÉS<br>IOT INDUSTRIEL (SEBN)</span>
+          </div>
+          <div class="fact">
+            <span class="fact-value">B2+</span>
+            <span class="fact-label" data-i18n="about.statLang">ANGLAIS TECHNIQUE B2+<br>FRANÇAIS & ARABE COURANTS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-shell work-section" id="work">
+      <div class="section-heading reveal">
+        <span class="section-number" data-i18n="work.subtitle">02 / PROJETS SÉLECTIONNÉS</span>
+        <h2 data-i18n="work.title">Conçus pour la<br><em>performance & l'impact.</em></h2>
+        <p class="heading-note" data-i18n="work.note">Une sélection de projets académiques, personnels et industriels en IA, génie logiciel et DevOps.</p>
+      </div>
+
+      <div class="project-filters reveal">
+        <button class="filter-btn active" data-filter="all" data-i18n="work.filterAll">Tous les projets</button>
+        <button class="filter-btn" data-filter="ai" data-i18n="work.filterAi">IA & Vision par Ordinateur</button>
+        <button class="filter-btn" data-filter="devops" data-i18n="work.filterDevops">DevOps & Systèmes</button>
+        <button class="filter-btn" data-filter="fullstack" data-i18n="work.filterFullstack">Full-Stack & Web</button>
+      </div>
+
+      <div class="project-list">
+
+        <!-- PROJECT 1: Notely -->
+        <article class="project-card reveal" data-category="ai devops fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p0.badge">01 — IA · HTR · CLEAN ARCHITECTURE</div>
+            
+            <!-- Contextual Animation: TrOCR ViT & Digital Ink -->
+            <div class="project-anim-box anim-notely" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag"><span class="hud-pulse"></span>TrOCR-ViT FP16</span>
+                <span class="hud-meta">INFERENCE: 14ms · CUDA</span>
+              </div>
+              <div class="notely-canvas-area">
+                <div class="notely-grid-bg"></div>
+                <div class="notely-laser-beam"></div>
+                <svg class="notely-ink-svg" viewBox="0 0 320 80">
+                  <defs>
+                    <linearGradient id="notelyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#a476ff" />
+                      <stop offset="50%" stop-color="#00f0ff" />
+                      <stop offset="100%" stop-color="#10b981" />
+                    </linearGradient>
+                  </defs>
+                  <path class="ink-path-bg" d="M 20 48 Q 45 18 70 48 T 120 48 Q 145 22 170 48 T 220 48 Q 245 15 270 48 T 305 48" />
+                  <path class="ink-path-active" d="M 20 48 Q 45 18 70 48 T 120 48 Q 145 22 170 48 T 220 48 Q 245 15 270 48 T 305 48" />
+                </svg>
+                <div class="notely-ocr-boxes">
+                  <div class="ocr-token token-1"><span class="token-text">Digital</span><span class="token-score">99.8%</span></div>
+                  <div class="ocr-token token-2"><span class="token-text">Ink</span><span class="token-score">99.4%</span></div>
+                  <div class="ocr-token token-3"><span class="token-text">ViT_TrOCR</span><span class="token-score">98.9%</span></div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <div class="hud-progress-wrap">
+                  <span class="hud-chip">HTR ACCURACY</span>
+                  <div class="hud-progress-bar"><div class="hud-progress-fill"></div></div>
+                </div>
+                <span class="hud-chip">99.2%</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">📝</div>
+              <div class="visual-graphic-title">NOTELY<br><b>APP</b></div>
+              <small>SMART DIGITAL INK & HANDWRITTEN OCR</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>NOV 2026</span>
+              <span data-i18n="p0.meta">IA · HTR · FULL-STACK · DEVSECOPS</span>
+            </div>
+            <h3>Notely</h3>
+            <p class="project-subtitle" data-i18n="p0.sub">Carnet de notes numérique intelligent et auto-apprenant</p>
+            <p data-i18n="p0.desc">
+              Plateforme multiplateforme (Web & Mobile) de prise de notes manuscrites augmentée par IA. Pipeline HTR multilingue (FR/EN/AR/DE) basé sur <strong>TrOCR (Vision Transformer de Microsoft)</strong> avec inférence FP16 sur GPU CUDA. Backend <strong>FastAPI</strong> en <strong>Clean Architecture + DDD</strong>, apprentissage continu à 3 niveaux (Ink Hash + Hamming, dictionnaire personnel PostgreSQL, fine-tuning LoRA/PEFT), filtre anti-poisoning, export PDF vectoriel avec moteur arabe RTL/Bidi, et sécurité <strong>Argon2id + JWT rotation par famille</strong>.
+            </p>
+            <div class="tags">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>TrOCR (ViT)</span>
+              <span>PyTorch</span>
+              <span>Angular 19</span>
+              <span>Flutter</span>
+              <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>Docker</span>
+              <span>Caddy</span>
+              <span>Clean Architecture</span>
+              <span>DDD</span>
+              <span>MLOps</span>
+            </div>
+            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/Notely-app" target="_blank" rel="noreferrer">
+              <span data-i18n="p0.link">Dépôt Notely GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: FreshTrack -->
+        <article class="project-card project-reverse reveal" data-category="ai devops fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p1.badge">02 — VISION PAR ORDINATEUR · IOT · DOCKER</div>
+            
+            <!-- Contextual Animation: YOLOv8 Computer Vision & IoT -->
+            <div class="project-anim-box anim-freshtrack" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag hud-live"><span class="hud-pulse pulse-red"></span>REC · CAM_01</span>
+                <span class="hud-meta">YOLOv8x · 60.0 FPS</span>
+              </div>
+              <div class="freshtrack-viewport">
+                <div class="cv-scan-line"></div>
+                <div class="cv-crosshair-center"></div>
+                <div class="cv-corner corner-tl"></div>
+                <div class="cv-corner corner-tr"></div>
+                <div class="cv-corner corner-bl"></div>
+                <div class="cv-corner corner-br"></div>
+                
+                <div class="cv-bbox bbox-1">
+                  <div class="bbox-header">
+                    <span class="bbox-name">🍎 Pomme_Gala #04</span>
+                    <span class="bbox-conf">0.98</span>
+                  </div>
+                  <div class="bbox-metrics">FRAÎCHEUR: 98% · OPTIMALE</div>
+                </div>
+
+                <div class="cv-bbox bbox-2">
+                  <div class="bbox-header">
+                    <span class="bbox-name">🍊 Agrume_Orange #12</span>
+                    <span class="bbox-conf">0.95</span>
+                  </div>
+                  <div class="bbox-metrics">FRAÎCHEUR: 95% · CALIBRE: A</div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <span class="hud-chip">ESP32: 4.2°C</span>
+                <span class="hud-chip">HUMIDITÉ: 82%</span>
+                <span class="hud-chip">DOCKER: HEALTHY</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">👁️</div>
+              <div class="visual-graphic-title">FRESH<br><b>TRACK</b></div>
+              <small>SMART VISION INVENTORY SYSTEM</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>AVR 2026</span>
+              <span data-i18n="p1.meta">IA · IOT · BACKEND CLOUD</span>
+            </div>
+            <h3>FreshTrack</h3>
+            <p class="project-subtitle" data-i18n="p1.sub">Surveillance intelligente de fraîcheur et gestion de stock</p>
+            <p data-i18n="p1.desc">
+              Pipeline de traçabilité combinant vision par ordinateur et télémétrie IoT. Intègre un modèle <strong>YOLOv8</strong> personnalisé (35 classes fruits/légumes) avec l'algorithme de tracking <strong>ByteTrack</strong>, conteneurisé avec <strong>Docker</strong> et Dev Containers, exposé via une <strong>API Flask</strong> (endpoints stock + détection), et relié à des capteurs <strong>ESP32/ESP8266 + DHT11</strong> et une application mobile <strong>Flutter</strong>. Architecture caméra locale (OpenCV) → API conteneurisée.
+            </p>
+            <div class="tags">
+              <span>Python</span>
+              <span>YOLOv8</span>
+              <span>ByteTrack</span>
+              <span>OpenCV</span>
+              <span>Flask</span>
+              <span>Docker</span>
+              <span>Dev Containers</span>
+              <span>Flutter</span>
+              <span>ESP32 / ESP8266</span>
+              <span>DHT11</span>
+            </div>
+            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/smart-fruit-veg-system-back" target="_blank" rel="noreferrer">
+              <span data-i18n="p1.link">Dépôt Backend GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Recruitment System -->
+        <article class="project-card reveal" data-category="fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p5.badge">03 — APPLICATION D'ENTREPRISE · FULL-STACK</div>
+            
+            <!-- Contextual Animation: ATS Kanban Pipeline & AI Match -->
+            <div class="project-anim-box anim-recruit" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag"><span class="hud-pulse"></span>ATS SMART PIPELINE</span>
+                <span class="hud-meta">128 CANDIDATS</span>
+              </div>
+              <div class="recruit-pipeline">
+                <div class="pipeline-col">
+                  <div class="col-head">SOURCING</div>
+                  <div class="candidate-card">
+                    <div class="c-avatar">👨‍💻</div>
+                    <div class="c-info">
+                      <span class="c-role">Lead DevOps</span>
+                      <span class="c-badge badge-blue">CV Parsing</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pipeline-col">
+                  <div class="col-head">AI MATCH</div>
+                  <div class="candidate-card">
+                    <div class="c-avatar">👩‍🔬</div>
+                    <div class="c-info">
+                      <span class="c-role">Ingénieur IA</span>
+                      <div class="match-score-pill">MATCH 97%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pipeline-col">
+                  <div class="col-head">RECRUTÉ</div>
+                  <div class="candidate-card">
+                    <div class="c-avatar">⭐</div>
+                    <div class="c-info">
+                      <span class="c-role">Full-Stack ISI</span>
+                      <span class="c-badge badge-green">OFFRE ✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <span class="hud-chip">TIME-TO-HIRE: -42%</span>
+                <span class="hud-chip">SCORING: AUTO</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">💼</div>
+              <div class="visual-graphic-title">RECRUIT<br><b>MENT</b></div>
+              <small>GROUPRIF RECRUITMENT PORTAL</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>JUL 2026</span>
+              <span data-i18n="p5.meta">FULL-STACK · SÉCURITÉ · EMAILING</span>
+            </div>
+            <h3>Portail de Recrutement GroupRIF</h3>
+            <p class="project-subtitle" data-i18n="p5.sub">Digitalisation complète du processus de recrutement</p>
+            <p data-i18n="p5.desc">
+              Application web complète (candidat + RH) avec maquettes <strong>Figma</strong> et prototype interactif. Frontend <strong>React 19 + TypeScript + Vite + Tailwind CSS v4</strong>, backend <strong>Spring Boot 3.5 (Java 25)</strong> avec <strong>Spring Data JPA / Hibernate</strong> et <strong>PostgreSQL 17</strong>. Fonctionnalités : candidature en 3 étapes, upload CV PDF (validation type/taille, renommage sécurisé, anti path-traversal), visualiseur PDF intégré, tableau de bord analytique RH, et <strong>emails HTML automatiques asynchrones</strong> (Spring Mail) à chaque changement de statut. Sécurité <strong>Defense in Depth</strong> : validation Jakarta côté serveur, sessions HttpOnly + SameSite, CORS strict.
+            </p>
+            <div class="tags">
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>Vite</span>
+              <span>Tailwind CSS v4</span>
+              <span>Spring Boot 3.5</span>
+              <span>Java 25</span>
+              <span>JPA / Hibernate</span>
+              <span>PostgreSQL 17</span>
+              <span>Spring Mail</span>
+              <span>Jakarta Validation</span>
+              <span>Figma</span>
+            </div>
+            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/Recruitment-system" target="_blank" rel="noreferrer">
+              <span data-i18n="p5.link">Dépôt Recruitment System GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: Training Management System -->
+        <article class="project-card project-reverse reveal" data-category="fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p6.badge">04 — GESTION · SPRING BOOT · ANGULAR</div>
+            
+            <!-- Contextual Animation: LMS Analytics & Progression -->
+            <div class="project-anim-box anim-training" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag"><span class="hud-pulse"></span>ENTERPRISE LMS</span>
+                <span class="hud-meta">450+ APPRENANTS</span>
+              </div>
+              <div class="training-dashboard">
+                <div class="training-radial-wrap">
+                  <svg class="radial-svg" viewBox="0 0 100 100">
+                    <defs>
+                      <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#10b981" />
+                        <stop offset="50%" stop-color="#00f0ff" />
+                        <stop offset="100%" stop-color="#a476ff" />
+                      </linearGradient>
+                    </defs>
+                    <circle class="radial-bg" cx="50" cy="50" r="40" />
+                    <circle class="radial-progress" cx="50" cy="50" r="40" />
+                  </svg>
+                  <div class="radial-text">
+                    <span class="radial-number">88%</span>
+                    <span class="radial-sub">MAÎTRISE</span>
+                  </div>
+                </div>
+                <div class="training-tracks">
+                  <div class="track-row">
+                    <div class="track-meta">
+                      <span>Microservices & Spring</span>
+                      <span class="track-pct">100%</span>
+                    </div>
+                    <div class="track-bar"><div class="track-fill fill-1"></div></div>
+                  </div>
+                  <div class="track-row">
+                    <div class="track-meta">
+                      <span>Angular 19 & Architecture</span>
+                      <span class="track-pct">85%</span>
+                    </div>
+                    <div class="track-bar"><div class="track-fill fill-2"></div></div>
+                  </div>
+                  <div class="track-row">
+                    <div class="track-meta">
+                      <span>DevOps CI/CD & Docker</span>
+                      <span class="track-pct">92%</span>
+                    </div>
+                    <div class="track-bar"><div class="track-fill fill-3"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <span class="hud-chip">24 MODULES ACTIFS</span>
+                <span class="hud-chip">120 CERTIFICATIONS</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">📘</div>
+              <div class="visual-graphic-title">TRAINING<br><b>MGMT</b></div>
+              <small>FORMATION MANAGEMENT SYSTEM</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>AVR 2026</span>
+              <span data-i18n="p6.meta">FULL-STACK · GESTION DE FORMATION</span>
+            </div>
+            <h3>Gestion de Formation</h3>
+            <p class="project-subtitle" data-i18n="p6.sub">Plateforme de gestion des formations et des apprenants</p>
+            <p data-i18n="p6.desc">
+              Application full-stack de gestion de formations. Backend <strong>Spring Boot (Java 17+)</strong> avec <strong>Spring Data JPA</strong> et <strong>PostgreSQL</strong>, frontend <strong>Angular</strong> réactif. Gestion des formations, des sessions et des participants, avec base de données versionnée par dump SQL partagé entre développeurs (bonnes pratiques Git documentées).
+            </p>
+            <div class="tags">
+              <span>Spring Boot</span>
+              <span>Java 17+</span>
+              <span>Spring Data JPA</span>
+              <span>Angular</span>
+              <span>PostgreSQL</span>
+              <span>Maven</span>
+            </div>
+            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/training-management-system" target="_blank" rel="noreferrer">
+              <span data-i18n="p6.link">Dépôt Training Management GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: Arabic MorphoLab -->
+        <article class="project-card reveal" data-category="fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p2.badge">05 — ALGORITHMIQUE & STRUCTURES AVANCÉES</div>
+            
+            <!-- Contextual Animation: Arabic NLP & Root Derivation Tree -->
+            <div class="project-anim-box anim-morpho" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag"><span class="hud-pulse"></span>MORPHO-SYNTAXE ARABE</span>
+                <span class="hud-meta">ARBRE AVL · O(log n)</span>
+              </div>
+              <div class="morpho-tree-container">
+                <div class="root-core-pill">
+                  <span class="root-label">الجذر الثلاثي (Racine)</span>
+                  <span class="root-arabic">[ ك - ت - ب ]</span>
+                </div>
+                <div class="morpho-branches">
+                  <div class="morpho-node node-1">
+                    <span class="wazn">فَاعِل</span>
+                    <span class="arrow">➔</span>
+                    <span class="word">كَاتِب</span>
+                    <small>Auteur</small>
+                  </div>
+                  <div class="morpho-node node-2">
+                    <span class="wazn">مَفْعُول</span>
+                    <span class="arrow">➔</span>
+                    <span class="word">مَكْتُوب</span>
+                    <small>Écrit</small>
+                  </div>
+                  <div class="morpho-node node-3">
+                    <span class="wazn">مَفْعَلَة</span>
+                    <span class="arrow">➔</span>
+                    <span class="word">مَكْتَبَة</span>
+                    <small>Bibliothèque</small>
+                  </div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <span class="hud-chip">DICTIONNAIRE: 25k+</span>
+                <span class="hud-chip">AVL BALANCED</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">⚡</div>
+              <div class="visual-graphic-title">MORPHO<br><b>LAB</b></div>
+              <small>ARABIC MORPHOLOGY SEARCH ENGINE</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>FÉV 2026</span>
+              <span data-i18n="p2.meta">BACKEND · COMPLEXITÉ ALGORITHMIQUE</span>
+            </div>
+            <h3>Arabic MorphoLab</h3>
+            <p class="project-subtitle" data-i18n="p2.sub">Moteur d'analyse morphologique et décomposition de racines arabes</p>
+            <p data-i18n="p2.desc">
+              Moteur linguistique haute performance analysant les racines arabes et dérivations morpho-syntaxiques. Exploitation d'<strong>Arbres AVL auto-équilibrés</strong> et de <strong>Tables de Hachage</strong> pour des recherches en O(log n). Architecture microservice <strong>Spring Boot</strong> et interface réactive <strong>React + TypeScript</strong>.
+            </p>
+            <div class="tags">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>AVL Trees</span>
+              <span>Data Structures</span>
+            </div>
+            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/Arabic-Morphology-Application" target="_blank" rel="noreferrer">
+              <span data-i18n="p2.link">Dépôt Application GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 6: SEBN Industrial Tracking -->
+        <article class="project-card project-reverse reveal" data-category="devops fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p3.badge">06 — SYSTÈMES INDUSTRIELS · ROBOTIQUE · PFE</div>
+            
+            <!-- Contextual Animation: Factory AGV PINTO & Harness -->
+            <div class="project-anim-box anim-sebn" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag hud-factory"><span class="hud-pulse pulse-green"></span>USINE SEBN 4.0</span>
+                <span class="hud-meta">AGV PINTO · SOAP</span>
+              </div>
+              <div class="sebn-factory-sim">
+                <div class="factory-grid-circuit">
+                  <div class="circuit-line line-h"></div>
+                  <div class="circuit-node c-node-1"></div>
+                  <div class="circuit-node c-node-2"></div>
+                  <div class="circuit-node c-node-3"></div>
+                  <div class="agv-robot">
+                    <div class="agv-lidar-wave"></div>
+                    <div class="agv-body">
+                      <span class="agv-label">PINTO-01</span>
+                      <div class="agv-beacon"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="harness-wire-visual">
+                  <span class="harness-tag">FAISCEAU AUTO #A204</span>
+                  <div class="wire-pulse-track">
+                    <div class="wire-spark"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <span class="hud-chip">500+ ARTICLES</span>
+                <span class="hud-chip">TÉLÉMÉTRIE: TEMPS RÉEL</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">🏭</div>
+              <div class="visual-graphic-title">SEBN<br><b>TRACK</b></div>
+              <small>WAREHOUSE & ROBOTIC PLACEMENT</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>FÉV — MAI 2025</span>
+              <span data-i18n="p3.meta">PFE INDUSTRIEL · SUMITOMO ELECTRIC</span>
+            </div>
+            <h3 data-i18n="p3.title">Système de Traçabilité Industrielle</h3>
+            <p class="project-subtitle" data-i18n="p3.sub">Gestion logistique automatisée avec robots autonomes PINTO</p>
+            <p data-i18n="p3.desc">
+              Projet de fin d'études (Licence) : Conception d'une solution de suivi temps réel pour plus de <strong>500+ articles industriels</strong> dans les entrepôts de câblage automobile. Intégration de micro-frontends <strong>Angular</strong>, microservices <strong>.NET Core</strong>, base <strong>PostgreSQL</strong> et protocole bidirectionnel <strong>SOAP</strong> pour le guidage de robots PINTO.
+            </p>
+            <div class="tags">
+              <span>.NET Core</span>
+              <span>Angular</span>
+              <span>PostgreSQL</span>
+              <span>SOAP Protocol</span>
+              <span>Robotic Integration</span>
+              <span>Microservices</span>
+            </div>
+            <span class="project-link muted-link" data-i18n="p3.link">Projet de Fin d'Études — Mention Très Bien</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 7: HR Leave Management -->
+        <article class="project-card reveal" data-category="fullstack">
+          <div class="project-visual">
+            <div class="project-visual-label" data-i18n="p4.badge">07 — APPLICATION D'ENTREPRISE</div>
+            
+            <!-- Contextual Animation: Workflow Stepper & Approval Stamp -->
+            <div class="project-anim-box anim-hrportal" aria-hidden="true">
+              <div class="anim-hud-header">
+                <span class="hud-tag"><span class="hud-pulse"></span>CIRCUIT VALIDATION RH</span>
+                <span class="hud-meta">RBAC MULTI-RÔLES</span>
+              </div>
+              <div class="hr-stepper-view">
+                <div class="workflow-stepper">
+                  <div class="wf-step step-done">
+                    <div class="wf-icon">📝</div>
+                    <span class="wf-label">Demande (5j)</span>
+                    <span class="wf-status">Soumis</span>
+                  </div>
+                  <div class="wf-line line-done"></div>
+                  <div class="wf-step step-done">
+                    <div class="wf-icon">👔</div>
+                    <span class="wf-label">Manager N+1</span>
+                    <span class="wf-status">Approuvé</span>
+                  </div>
+                  <div class="wf-line line-done"></div>
+                  <div class="wf-step step-active">
+                    <div class="wf-icon">🛡️</div>
+                    <span class="wf-label">Direction RH</span>
+                    <span class="wf-status">Validé ✓</span>
+                  </div>
+                </div>
+                <div class="hr-approval-stamp">
+                  <div class="stamp-seal">APPROUVÉ · RBAC VALIDATED</div>
+                </div>
+              </div>
+              <div class="anim-hud-footer">
+                <span class="hud-chip">CALENDRIER SYNCHRO</span>
+                <span class="hud-chip">SÉCURITÉ: JWT & SQL</span>
+              </div>
+            </div>
+
+            <div class="visual-graphic">
+              <div class="visual-graphic-icon">💼</div>
+              <div class="visual-graphic-title">HR<br><b>PORTAL</b></div>
+              <small>WORKFLOW & LEAVE MANAGEMENT</small>
+            </div>
+            <span class="visual-corner">↗</span>
+          </div>
+          
+          <div class="project-info">
+            <div class="project-meta">
+              <span>JUL 2024</span>
+              <span data-i18n="p4.meta">SOLUTIONS D'ENTREPRISE</span>
+            </div>
+            <h3 data-i18n="p4.title">Gestion des Congés RH</h3>
+            <p class="project-subtitle" data-i18n="p4.sub">Portail de gouvernance et circuits d'approbation numériques</p>
+            <p data-i18n="p4.desc">
+              Portail d'entreprise fluidifiant les demandes de congés, circuits de validation hiérarchiques et calendriers d'équipe. Séparation nette entre frontend <strong>Angular</strong>, API REST <strong>.NET</strong> et stockage <strong>SQL Server</strong> avec gestion stricte des autorisations RBAC.
+            </p>
+            <div class="tags">
+              <span>Angular</span>
+              <span>.NET API</span>
+              <span>SQL Server</span>
+              <span>RBAC Security</span>
+              <span>Tailwind CSS</span>
+            </div>
+            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/HRWebApp-Frontend-Angular--" target="_blank" rel="noreferrer">
+              <span data-i18n="p4.link">Dépôt Frontend GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="all-projects reveal">
+        <a class="button button-outline" href="https://github.com/H-o-u-ss-e-m?tab=repositories" target="_blank" rel="noreferrer" data-i18n="work.viewAll">
+          Voir tous les dépôts sur GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section section-shell" id="experience">
+      <div class="section-heading reveal">
+        <span class="section-number" data-i18n="timeline.subtitle">03 / EXPÉRIENCE & FORMATION</span>
+        <h2 data-i18n="timeline.title">Le parcours qui a<br><em>forgé mon savoir-faire.</em></h2>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="timeline-column reveal">
+          <h3 class="column-title" data-i18n="timeline.expTitle">EXPÉRIENCE PROFESSIONNELLE</h3>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <span class="timeline-date">FEB 2025 — MAY 2025</span>
+              <h4 data-i18n="exp1.role">Stagiaire Développeur Full-Stack (PFE)</h4>
+              <p class="timeline-place">SEBN · Sumitomo Electric Bordnetze</p>
+              <p data-i18n="exp1.desc">
+                Développement de la plateforme de traçabilité industrielle chez SEBN Sumitomo Electric. Microservices .NET Core, base PostgreSQL, interface Angular et interfaçage robotique SOAP.
+              </p>
+              <span class="timeline-highlight" data-i18n="exp1.badge">MAJOR DE PROMOTION PFE</span>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">JUL 2024 — AUG 2024</span>
+              <h4 data-i18n="exp2.role">Stagiaire Développeur Web</h4>
+              <p class="timeline-place">Bee Codders</p>
+              <p data-i18n="exp2.desc">
+                Participation à la création de modules applicatifs web réactifs et intégration d'APIs RESTful avec les frameworks JavaScript modernes.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">JUL 2024</span>
+              <h4 data-i18n="exp3.role">Stagiaire Support & Infrastructure IT</h4>
+              <p class="timeline-place">Marquardt Group</p>
+              <p data-i18n="exp3.desc">
+                Immersion au sein des infrastructures réseaux, maintenance de serveurs, assistance technique et diagnostic matériel en environnement industriel.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-column reveal">
+          <h3 class="column-title" data-i18n="timeline.eduTitle">FORMATION & DIPLÔMES</h3>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <span class="timeline-date">SEP 2025 — JUL 2028 (EN COURS)</span>
+              <h4 data-i18n="edu1.role">Diplôme d'Ingénieur · Génie Logiciel (IDL)</h4>
+              <p class="timeline-place" data-i18n="edu1.place">Institut Supérieur d'Informatique (ISI), Tunisie</p>
+              <p data-i18n="edu1.desc">
+                Cursus d'ingénierie avancée axé sur l'architecture logicielle, les systèmes distribués, le Cloud, l'IA appliquée et les pratiques DevOps.
+              </p>
+              <span class="timeline-highlight" data-i18n="edu1.badge">CYCLE INGÉNIEUR EN COURS</span>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">SEP 2022 — JUL 2025</span>
+              <h4 data-i18n="edu2.role">Licence en Sciences de l'Informatique</h4>
+              <p class="timeline-place" data-i18n="edu2.place">Faculté des Sciences de Bizerte · Université de Carthage</p>
+              <p data-i18n="edu2.desc">
+                Spécialité Génie Logiciel et Systèmes d'Information. Diplômé avec la <strong>Mention Très Bien et Classé 1er (Major de promotion)</strong>.
+              </p>
+              <span class="timeline-highlight" data-i18n="edu2.badge">MAJOR DE PROMOTION · MENTION TRÈS BIEN</span>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">2022</span>
+              <h4 data-i18n="edu3.role">Baccalauréat Mathématiques</h4>
+              <p class="timeline-place" data-i18n="edu3.place">Lycée Bougatfa</p>
+              <p data-i18n="edu3.desc">
+                Diplôme national du Baccalauréat avec la <strong>Mention Bien</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills-section" id="skills">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <span class="section-number" data-i18n="skills.subtitle">04 / TOOLKIT TECHNIQUE</span>
+          <h2 data-i18n="skills.title">Conçu pour les<br><em>systèmes modernes.</em></h2>
+          <p class="heading-note" data-i18n="skills.note">Technologies, frameworks et pratiques DevOps mis en œuvre au quotidien.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <div class="skill-header">
+              <span class="skill-index">01</span>
+              <span class="skill-icon">🧠</span>
+            </div>
+            <h3 data-i18n="skills.cat1">IA & Vision par Ordinateur</h3>
+            <div class="skill-items">
+              <span>YOLOv8</span>
+              <span>ByteTrack</span>
+              <span>PyTorch</span>
+              <span>OpenCV</span>
+              <span>TrOCR / Vision Transformers</span>
+              <span>RAG & LangChain</span>
+              <span>Deep Learning</span>
+              <span>Data Preprocessing</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-header">
+              <span class="skill-index">02</span>
+              <span class="skill-icon">⚡</span>
+            </div>
+            <h3 data-i18n="skills.cat2">DevOps & Infrastructure</h3>
+            <div class="skill-items">
+              <span>Docker & Compose</span>
+              <span>Dev Containers</span>
+              <span>GitHub Actions CI/CD</span>
+              <span>Linux (Ubuntu/Debian)</span>
+              <span>Bash Scripting</span>
+              <span>Nginx / Caddy</span>
+              <span>Microservices</span>
+              <span>Postman / API Testing</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-header">
+              <span class="skill-index">03</span>
+              <span class="skill-icon">⚙️</span>
+            </div>
+            <h3 data-i18n="skills.cat3">Architecture & Backend</h3>
+            <div class="skill-items">
+              <span>.NET Core / C#</span>
+              <span>Spring Boot / Java</span>
+              <span>FastAPI / Python</span>
+              <span>Flask</span>
+              <span>REST APIs</span>
+              <span>SOAP Integration</span>
+              <span>Clean Architecture & DDD</span>
+              <span>UML & Design Patterns</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-header">
+              <span class="skill-index">04</span>
+              <span class="skill-icon">💻</span>
+            </div>
+            <h3 data-i18n="skills.cat4">Frontend & Mobile</h3>
+            <div class="skill-items">
+              <span>Angular</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>JavaScript (ES6+)</span>
+              <span>Flutter</span>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-header">
+              <span class="skill-index">05</span>
+              <span class="skill-icon">🗄️</span>
+            </div>
+            <h3 data-i18n="skills.cat5">Bases de Données & Stockage</h3>
+            <div class="skill-items">
+              <span>PostgreSQL</span>
+              <span>SQL Server (SSMS)</span>
+              <span>MySQL</span>
+              <span>Redis</span>
+              <span>Indexation & Optimisation</span>
+              <span>Modélisation Relationnelle</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-header">
+              <span class="skill-index">06</span>
+              <span class="skill-icon">📝</span>
+            </div>
+            <h3 data-i18n="skills.cat6">Langages Principaux</h3>
+            <div class="skill-items">
+              <span>Python</span>
+              <span>Java</span>
+              <span>C#</span>
+              <span>TypeScript</span>
+              <span>C</span>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="languages-row reveal">
+          <span class="language-label" data-i18n="skills.langLabel">LANGUES MAÎTRISÉES :</span>
+          <span data-i18n="skills.langAr">Arabe <i>Maternelle</i></span>
+          <span data-i18n="skills.langFr">Français <i>Courant</i></span>
+          <span data-i18n="skills.langEn">Anglais <i>B2 · Technique</i></span>
+          <span data-i18n="skills.langDe">Allemand <i>A2</i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section section-shell cert-section" id="certifications">
+      <div class="section-heading reveal">
+        <span class="section-number" data-i18n="cert.subtitle">05 / CERTIFICATIONS VÉRIFIÉES</span>
+        <h2 data-i18n="cert.title">Qualifications & diplômes<br><em>spécialisés.</em></h2>
+        <p class="heading-note" data-i18n="cert.note">Certifications vérifiées auprès d'universités américaines et d'institutions mondiales (IBM, Google, Cisco, WQU).</p>
+      </div>
+
+      <div class="cert-grid">
+        <a class="cert-card featured-us-cert reveal" href="https://www.credly.com/badges/aa13fd6c-9ce9-4aa4-afc8-8ce0f616eac6/linked_in_profile" target="_blank" rel="noreferrer">
+          <div>
+            <div class="cert-top">
+              <span class="cert-org wqu">WorldQuant University ↗</span>
+              <span class="cert-date">JUL 2026</span>
+            </div>
+            <div class="us-accredited-banner" data-i18n="cert.wquUsBanner">
+              🇺🇸 UNIVERSITÉ AMÉRICAINE ACCRÉDITÉE (DEAC / CHEA)
+            </div>
+            <h3>Computer Vision Lab</h3>
+            <p data-i18n="cert.wquDesc">
+              Laboratoire avancé de 6 projets PyTorch de bout en bout : classification faune par pièges photo, détection de maladies agricoles par CNN, suivi de trafic temps réel au Bangladesh, reconnaissance faciale MTCNN/Inception-ResNet sous Flask, génération d'images médicales par GAN sous Streamlit et déploiement de modèles de diffusion.
+            </p>
+          </div>
+          <div class="cert-bottom">
+            <span class="credential">ID: aa13fd6c…eac6</span>
+            <span class="verify-badge" data-i18n="cert.verifyCredly">Vérifier sur Credly ↗</span>
+          </div>
+        </a>
+
+        <a class="cert-card reveal" href="https://www.coursera.org/account/accomplishments/verify/RCXIYF9A0R1C" target="_blank" rel="noreferrer">
+          <div>
+            <div class="cert-top">
+              <span class="cert-org">IBM ↗</span>
+              <span class="cert-date">NOV 2026</span>
+            </div>
+            <h3>Fundamentals of AI Agents Using RAG and LangChain</h3>
+            <p>IBM Training · Conception d'agents autonomes, recherche sémantique vectorielle et orchestration LangChain.</p>
+          </div>
+          <div class="cert-bottom">
+            <span class="credential">ID: RCXIYF9A0R1C</span>
+            <span class="verify-badge" data-i18n="cert.verifyCoursera">Vérifier sur Coursera ↗</span>
+          </div>
+        </a>
+
+        <a class="cert-card reveal" href="https://www.credly.com/badges/d45ae374-b632-464c-a68d-9a7ad0f89958/linked_in_profile" target="_blank" rel="noreferrer">
+          <div>
+            <div class="cert-top">
+              <span class="cert-org coursera">IBM / Credly ↗</span>
+              <span class="cert-date">OCT 2026</span>
+            </div>
+            <h3>AI Capstone Project with Deep Learning</h3>
+            <p>IBM Specialization · Projet intégrateur appliqué aux réseaux de neurones profonds et transfer learning.</p>
+          </div>
+          <div class="cert-bottom">
+            <span class="credential">Badge Credly Vérifié</span>
+            <span class="verify-badge" data-i18n="cert.verifyCredly">Vérifier sur Credly ↗</span>
+          </div>
+        </a>
+
+        <a class="cert-card reveal" href="https://www.coursera.org/account/accomplishments/verify/NDAAMT2QH2FG" target="_blank" rel="noreferrer">
+          <div>
+            <div class="cert-top">
+              <span class="cert-org">IBM ↗</span>
+              <span class="cert-date">OCT 2026</span>
+            </div>
+            <h3>Deep Learning with PyTorch</h3>
+            <p>IBM Training · Entraînement de modèles de réseaux de neurones, rétropropagation, CNNs et optimisation GPU sous PyTorch.</p>
+          </div>
+          <div class="cert-bottom">
+            <span class="credential">ID: NDAAMT2QH2FG</span>
+            <span class="verify-badge" data-i18n="cert.verifyCoursera">Vérifier sur Coursera ↗</span>
+          </div>
+        </a>
+
+        <a class="cert-card reveal" href="https://www.coursera.org/account/accomplishments/specialization/XW9V7T1W63CS" target="_blank" rel="noreferrer">
+          <div>
+            <div class="cert-top">
+              <span class="cert-org google">Google ↗</span>
+              <span class="cert-date">DEC 2025</span>
+            </div>
+            <h3>Google Data Analytics Professional</h3>
+            <p>Google Certificate · Nettoyage, visualisation, analyse statistique de données complexes, SQL et dashboards décisionnels.</p>
+          </div>
+          <div class="cert-bottom">
+            <span class="credential">ID: XW9V7T1W63CS</span>
+            <span class="verify-badge" data-i18n="cert.verifyCoursera">Vérifier sur Coursera ↗</span>
+          </div>
+        </a>
+
+        <a class="cert-card reveal" href="https://www.credly.com/badges/574e4ab7-d269-4c44-a387-41d511094a1e/public_url" target="_blank" rel="noreferrer">
+          <div>
+            <div class="cert-top">
+              <span class="cert-org cisco">Cisco ↗</span>
+              <span class="cert-date">OCT 2025</span>
+            </div>
+            <h3>Data Analytics Essentials</h3>
+            <p>Cisco Networking Academy · Principes fondamentaux d'analyse de données, pipeline ETL et modélisation.</p>
+          </div>
+          <div class="cert-bottom">
+            <span class="credential">Badge Credly Vérifié</span>
+            <span class="verify-badge" data-i18n="cert.verifyCredly">Vérifier sur Credly ↗</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="cert-link reveal">
+        <a class="button button-outline" href="https://www.linkedin.com/in/rezgui-houssem-917960271/" target="_blank" rel="noreferrer" data-i18n="cert.btnLinkedin">
+          Voir toutes les certifications sur LinkedIn ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="section-shell contact-inner">
+        <span class="section-number reveal" data-i18n="contact.subtitle">06 / ENTRER EN CONTACT</span>
+        <h2 class="reveal" data-i18n="contact.title">Donnons vie à vos<br><em>projets innovants.</em></h2>
+        <p class="contact-copy reveal" data-i18n="contact.desc">
+          Que vous ayez une opportunité de stage ingénieur, un défi en vision par ordinateur/IA, ou une architecture Cloud/DevOps à bâtir, je suis à votre écoute.
+        </p>
+
+        <div class="contact-email-wrapper reveal">
+          <a class="contact-email" href="mailto:rezguihoussem67@gmail.com">
+            rezguihoussem67@gmail.com <span>↗</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" title="Copier l'adresse email" aria-label="Copy email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="contact-bottom reveal">
+          <div>
+            <span data-i18n="contact.phone">TÉLÉPHONE</span>
+            <a href="tel:+21654120466">+216 54 120 466</a>
+          </div>
+          <div>
+            <span data-i18n="contact.location">LOCALISATION</span>
+            <p data-i18n="contact.locVal">Tunis, Tunisie · Ouvert à l'international & remote</p>
+          </div>
+          <div>
+            <span data-i18n="contact.profiles">PROFILS & CODE</span>
+            <div class="contact-social-pills">
+              <a class="social-pill github" href="https://github.com/H-o-u-ss-e-m" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+                <span>↗</span>
+              </a>
+              <a class="social-pill linkedin" href="https://www.linkedin.com/in/rezgui-houssem-917960271/" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.99 0-1.78-.79-1.78-1.78 0-.98.79-1.77 1.78-1.77.99 0 1.78.79 1.78 1.77 0 .99-.79 1.78-1.78 1.78m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+                </svg>
+                <span>LinkedIn</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home">
+      <div class="brand-avatar-wrap">
+        <div class="brand-halo"></div>
+        <div class="brand-mark">
+          <span class="brand-letters">HR</span>
+          <span class="brand-status-dot"></span>
+        </div>
+      </div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">HOUSSEM<span class="brand-dot">.</span></span>
+        <span class="brand-role"><span class="brand-role-arrow">&gt;</span> IA &amp; SOFTWARE</span>
+      </div>
+    </a>
+    <span data-i18n="footer.built">ARCHITECTURÉ AVEC PASSION ET INTENTION.</span>
+    <span>© <span id="year">2026</span> HOUSSEM REZGUI</span>
+    <a href="#home" class="back-top">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="toast" id="copyToast" role="alert" aria-live="polite">
+    <span>✓</span> <span data-i18n="contact.toast">Adresse email copiée dans le presse-papier !</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
