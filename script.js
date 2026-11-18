@@ -60,9 +60,9 @@ const i18n = {
     'p0.link': 'Dépôt Notely GitHub ↗',
 
     'p_cafe.badge': '02 — VISION IOT · AGENT IA (LLM LoRA) · ANGULAR 21',
-    'p_cafe.meta': 'VISION PAR ORDINATEUR · LLM LoRA · CLEAN ARCHITECTURE',
-    'p_cafe.sub': 'Système Autonome de Restauration Intelligente & Agent Conversationnel IA',
-    'p_cafe.desc': 'Solution complète déployée pour le café-restaurant <em>Coffee House Lac</em> (Tunis), alliant <strong>Vision par Ordinateur IoT</strong> et <strong>Agent Conversationnel IA 100% local</strong> (zéro API commerciale). Pipeline vidéo <strong>YOLOv8n</strong> avec filtrage géométrique strict bord-à-bord (d<sub>edge</sub> ≤ 30 px) pour la détection temps réel de l\'occupation des tables (🟢 Libre, 🔴 Occupée avec chronomètre, 🟠 En départ) sur 4 sources caméras (DirectShow). Cerveau conversationnel bilingue (Français & Dialecte Tunisien / <em>Derja</em>) propulsé par <strong>Qwen2.5-1.5B affiné par LoRA (PEFT)</strong> couplé à un moteur <strong>RAG déterministe</strong> (catalogue 68 articles, prix officiels en DT, gestion des allergènes). Backend <strong>Flask en Clean Architecture</strong> avec streaming MJPEG et frontend réactif <strong>Angular 21 (Reactive Signals)</strong>.',
+    'p_cafe.meta': 'IA · VISION PAR ORDINATEUR · IOT',
+    'p_cafe.sub': 'Système Intelligent de Gestion de Café | IA, Vision par Ordinateur & IoT',
+    'p_cafe.desc': 'CaféSense est une solution intelligente de gestion de café combinant la vision par ordinateur en temps réel et un assistant conversationnel IA local pour optimiser les opérations de restauration et l\'expérience client.<br><br>Le système surveille automatiquement l\'occupation des tables via des flux de caméras, en identifiant les tables libres, occupées et sur le point d\'être libérées. Il intègre également un assistant IA bilingue, spécialisé en français et en arabe tunisien, qui aide les clients à explorer le menu, consulter les prix et allergènes, et obtenir la disponibilité des tables en temps réel.<br><br>Conçue autour de modèles IA adaptés (Fine-Tuning), la solution intègre <strong>YOLOv8</strong> pour la détection d\'objets et <strong>Qwen2.5</strong> optimisé avec <strong>LoRA</strong> couplé à un moteur <strong>RAG déterministe</strong> pour des réponses conversationnelles fiables, le tout s\'exécutant localement sans API commerciale.',
     'p_cafe.link': 'Dépôt CaféSense GitHub ↗',
 
     'p1.badge': '03 — VISION PAR ORDINATEUR · IOT · DOCKER',
@@ -206,9 +206,9 @@ const i18n = {
     'p0.link': 'Explore Notely Repository ↗',
 
     'p_cafe.badge': '02 — IOT VISION · CONVERSATIONAL AI (LLM LoRA) · ANGULAR 21',
-    'p_cafe.meta': 'COMPUTER VISION · LLM LoRA · CLEAN ARCHITECTURE',
-    'p_cafe.sub': 'Autonomous Smart Café Management & Conversational AI Agent',
-    'p_cafe.desc': 'An end-to-end hospitality intelligence platform deployed for the <em>Coffee House Lac</em> café-restaurant in Tunis, seamlessly bridging <strong>IoT Computer Vision</strong> with a <strong>100% localized Conversational AI agent</strong> (zero commercial third-party APIs). Powered by a fine-tuned <strong>YOLOv8n</strong> pipeline with strict edge-to-edge spatial filtering (d<sub>edge</sub> ≤ 30 px) for real-time table occupancy tracking (🟢 Free, 🔴 Occupied with live timers, 🟠 Leaving grace period) across 4 live camera feeds (DirectShow). Backed by a bilingual French & Tunisian Derja conversational brain powered by a <strong>LoRA fine-tuned Qwen2.5-1.5B model (PEFT)</strong> coupled with a <strong>deterministic RAG engine</strong> (68-item menu, official DT pricing, zero hallucinations, allergen safety). Architected with a <strong>Clean Architecture Flask backend</strong> with MJPEG streaming and a responsive <strong>Angular 21 (Reactive Signals)</strong> interface.',
+    'p_cafe.meta': 'AI · COMPUTER VISION · IOT',
+    'p_cafe.sub': 'Smart Café Management System | AI, Computer Vision & IoT',
+    'p_cafe.desc': 'CaféSense is an intelligent café management solution that combines real-time computer vision and a locally running AI conversational assistant to enhance restaurant operations and customer experience.<br><br>The system automatically monitors table occupancy through camera feeds, identifying available, occupied, and soon-to-be-released tables. It also features a bilingual AI assistant, specialized in French and Tunisian Arabic, that helps customers explore the menu, check prices and allergens, and obtain real-time table availability.<br><br>Built around custom fine-tuned AI models, the solution integrates <strong>YOLOv8</strong> for object detection and <strong>Qwen2.5</strong> enhanced with <strong>LoRA</strong> and a deterministic <strong>RAG</strong> engine for reliable conversational responses, all running locally without commercial AI APIs.',
     'p_cafe.link': 'Explore CaféSense Repository ↗',
 
     'p1.badge': '03 — COMPUTER VISION · IOT · DOCKER',
