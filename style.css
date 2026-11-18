@@ -513,24 +513,29 @@ body {
 }
 
 .hero-role {
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-size: clamp(0.82rem, 1.35vw, 1.02rem);
   font-family: var(--font-mono);
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 0.35rem;
+  max-width: 100%;
 }
 
 .role-prefix {
   color: var(--text-muted);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 #typedRole {
   color: var(--accent-purple);
   font-weight: 600;
   text-shadow: 0 0 12px var(--accent-purple-glow);
+  white-space: nowrap;
 }
 
 .caret {
@@ -538,6 +543,7 @@ body {
   color: var(--accent-cyan);
   font-weight: 300;
   animation: blink 1s step-start infinite;
+  flex-shrink: 0;
 }
 
 @keyframes blink {
@@ -3190,7 +3196,9 @@ img, svg, canvas {
   }
 
   .hero-role {
-    font-size: 0.95rem;
+    font-size: clamp(0.72rem, 2.6vw, 0.88rem);
+    white-space: nowrap;
+    flex-wrap: nowrap;
   }
 
   .hero-intro {
@@ -3324,6 +3332,13 @@ img, svg, canvas {
   .hero-copy h1 {
     font-size: 2.1rem;
     margin-bottom: 0.8rem;
+  }
+
+  .hero-role {
+    font-size: clamp(0.64rem, 2.8vw, 0.78rem);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
   }
 
   .hero-actions .button {
@@ -3595,6 +3610,13 @@ img, svg, canvas {
 
   .hero-copy h1 {
     font-size: 1.85rem;
+  }
+
+  .hero-role {
+    font-size: 0.62rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    flex-wrap: nowrap;
   }
 
   .brand-name {

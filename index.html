@@ -15,9 +15,53 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=2.2">
-  <!-- Critical Inline Styles for CaféSense & Animations (Anti-Cache Fallback) -->
+  <link rel="stylesheet" href="style.css?v=2.3">
+  <!-- Critical Inline Styles for CaféSense & Hero Role (Anti-Cache Fallback) -->
   <style>
+    .hero-role {
+      font-size: clamp(0.82rem, 1.35vw, 1.02rem) !important;
+      font-family: var(--font-mono, monospace) !important;
+      color: var(--text-secondary, #94a3b8) !important;
+      margin-bottom: 1.5rem !important;
+      display: flex !important;
+      align-items: baseline !important;
+      flex-wrap: nowrap !important;
+      white-space: nowrap !important;
+      gap: 0.35rem !important;
+      max-width: 100% !important;
+    }
+    .role-prefix {
+      color: var(--text-muted, #64748b) !important;
+      flex-shrink: 0 !important;
+      white-space: nowrap !important;
+    }
+    #typedRole {
+      color: var(--accent-purple, #a855f7) !important;
+      font-weight: 600 !important;
+      white-space: nowrap !important;
+    }
+    .caret {
+      display: inline-block !important;
+      color: var(--accent-cyan, #06b6d4) !important;
+      flex-shrink: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .hero-role {
+        font-size: clamp(0.72rem, 2.6vw, 0.88rem) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-role {
+        font-size: clamp(0.64rem, 2.8vw, 0.78rem) !important;
+        gap: 0.25rem !important;
+      }
+    }
+    @media (max-width: 360px) {
+      .hero-role {
+        font-size: 0.62rem !important;
+        letter-spacing: -0.01em !important;
+      }
+    }
     .anim-cafesense {
       background: radial-gradient(circle at 60% 20%, rgba(46, 26, 16, 0.95), rgba(12, 9, 8, 0.98)) !important;
       border-color: rgba(242, 163, 65, 0.35) !important;
@@ -1347,6 +1391,6 @@
     <span>✓</span> <span data-i18n="contact.toast">Adresse email copiée dans le presse-papier !</span>
   </div>
 
-  <script src="script.js?v=2.2"></script>
+  <script src="script.js?v=2.3"></script>
 </body>
 </html>
