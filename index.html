@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=2.3">
+  <link rel="stylesheet" href="style.css?v=2.4">
   <!-- Critical Inline Styles for CaféSense & Hero Role (Anti-Cache Fallback) -->
   <style>
     .hero-role {
@@ -408,13 +408,13 @@
           
           <div class="project-info">
             <div class="project-meta">
-              <span>NOV 2026</span>
+              <span>FIN SEPT 2026</span>
               <span data-i18n="p0.meta">IA · HTR · FULL-STACK · DEVSECOPS</span>
             </div>
             <h3>Notely</h3>
             <p class="project-subtitle" data-i18n="p0.sub">Carnet de notes numérique intelligent et auto-apprenant</p>
             <p data-i18n="p0.desc">
-              Plateforme multiplateforme (Web & Mobile) de prise de notes manuscrites augmentée par IA. Pipeline HTR multilingue (FR/EN/AR/DE) basé sur <strong>TrOCR (Vision Transformer de Microsoft)</strong> avec inférence FP16 sur GPU CUDA. Backend <strong>FastAPI</strong> en <strong>Clean Architecture + DDD</strong>, apprentissage continu à 3 niveaux (Ink Hash + Hamming, dictionnaire personnel PostgreSQL, fine-tuning LoRA/PEFT), filtre anti-poisoning, export PDF vectoriel avec moteur arabe RTL/Bidi, et sécurité <strong>Argon2id + JWT rotation par famille</strong>.
+              Notely est une application Web et Mobile de prise de notes manuscrites augmentée par l'IA. Elle permet d'écrire naturellement au stylet ou au doigt, puis convertit automatiquement les tracés en texte structuré et éditable en quatre langues (français, anglais, arabe, allemand). Les schémas dessinés à main levée sont reconnus et transformés en formes géométriques parfaites, et les notes peuvent être exportées en PDF professionnel, y compris en arabe (écriture de droite à gauche).<br><br>Sa particularité : l'application apprend de l'écriture de chaque utilisateur. À chaque correction apportée, Notely mémorise la signature visuelle du tracé et enrichit un dictionnaire personnel, ce qui améliore la reconnaissance au fil de l'usage. Un filtre de sécurité empêche toute correction abusive de corrompre l'apprentissage.<br><br>Côté technique, le backend repose sur une architecture logicielle propre (Clean Architecture + DDD), un moteur de reconnaissance basé sur TrOCR (Vision Transformer de Microsoft) optimisé GPU, et une sécurité de niveau bancaire (Argon2id, rotation des jetons JWT). L'ensemble est conteneurisé avec Docker et prêt à être déployé.
             </p>
             <div class="tags">
               <span>Python</span>
@@ -577,9 +577,9 @@
               <span data-i18n="p1.meta">IA · IOT · BACKEND CLOUD</span>
             </div>
             <h3>FreshTrack</h3>
-            <p class="project-subtitle" data-i18n="p1.sub">Surveillance intelligente de fraîcheur et gestion de stock</p>
+            <p class="project-subtitle" data-i18n="p1.sub">Système Intelligent de Reconnaissance des Fruits & Légumes et de Gestion Automatisée des Stocks</p>
             <p data-i18n="p1.desc">
-              Pipeline de traçabilité combinant vision par ordinateur et télémétrie IoT. Intègre un modèle <strong>YOLOv8</strong> personnalisé (35 classes fruits/légumes) avec l'algorithme de tracking <strong>ByteTrack</strong>, conteneurisé avec <strong>Docker</strong> et Dev Containers, exposé via une <strong>API Flask</strong> (endpoints stock + détection), et relié à des capteurs <strong>ESP32/ESP8266 + DHT11</strong> et une application mobile <strong>Flutter</strong>. Architecture caméra locale (OpenCV) → API conteneurisée.
+              Développement d'une solution intelligente destinée aux commerçants de fruits et légumes, permettant d'automatiser la gestion des stocks grâce à la vision par ordinateur. Une caméra détecte et identifie en temps réel les différents produits qui passent dans une zone de détection. Un modèle YOLOv8 personnalisé reconnaît et classe automatiquement chaque fruit et légume parmi 35 catégories, tandis que le tracking multi-objets permet de suivre les produits et d'éviter les doubles comptages. Chaque détection valide déclenche une mise à jour automatique des quantités en stock.<br><br>La solution comprend également une application mobile Flutter dédiée aux vendeurs et aux clients, ainsi qu'un système IoT basé sur ESP8266 et des capteurs de température et d'humidité pour le suivi des conditions de conservation. Backend Python/Flask exposé via une API REST et conteneurisé avec Docker.
             </p>
             <div class="tags">
               <span>Python</span>
@@ -587,14 +587,17 @@
               <span>ByteTrack</span>
               <span>OpenCV</span>
               <span>Flask</span>
+              <span>REST API</span>
               <span>Docker</span>
               <span>Dev Containers</span>
               <span>Flutter</span>
-              <span>ESP32 / ESP8266</span>
-              <span>DHT11</span>
+              <span>Dart</span>
+              <span>Riverpod</span>
+              <span>ESP8266</span>
+              <span>DHT Sensor</span>
             </div>
-            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/smart-fruit-veg-system-back" target="_blank" rel="noreferrer">
-              <span data-i18n="p1.link">Dépôt Backend GitHub ↗</span>
+            <a class="project-link" href="https://github.com/Selim-SAIDI/smart-fruit-system" target="_blank" rel="noreferrer">
+              <span data-i18n="p1.link">Dépôt Smart Fruit System GitHub ↗</span>
             </a>
           </div>
         </article>
@@ -662,21 +665,23 @@
               <span data-i18n="p5.meta">FULL-STACK · SÉCURITÉ · EMAILING</span>
             </div>
             <h3>Portail de Recrutement GroupRIF</h3>
-            <p class="project-subtitle" data-i18n="p5.sub">Digitalisation complète du processus de recrutement</p>
+            <p class="project-subtitle" data-i18n="p5.sub">Plateforme Web de Gestion et de Digitalisation du Processus de Recrutement</p>
             <p data-i18n="p5.desc">
-              Application web complète (candidat + RH) avec maquettes <strong>Figma</strong> et prototype interactif. Frontend <strong>React 19 + TypeScript + Vite + Tailwind CSS v4</strong>, backend <strong>Spring Boot 3.5 (Java 25)</strong> avec <strong>Spring Data JPA / Hibernate</strong> et <strong>PostgreSQL 17</strong>. Fonctionnalités : candidature en 3 étapes, upload CV PDF (validation type/taille, renommage sécurisé, anti path-traversal), visualiseur PDF intégré, tableau de bord analytique RH, et <strong>emails HTML automatiques asynchrones</strong> (Spring Mail) à chaque changement de statut. Sécurité <strong>Defense in Depth</strong> : validation Jakarta côté serveur, sessions HttpOnly + SameSite, CORS strict.
+              Conception et développement d'une plateforme web centralisant l'ensemble du processus de recrutement, depuis la soumission des candidatures jusqu'à la gestion et au suivi des décisions RH. La solution propose deux espaces dédiés : un portail candidat permettant de consulter les offres, soumettre des candidatures et suivre leur évolution, et une interface RH pour gérer les offres, examiner les profils, consulter les CV et piloter les différentes étapes du recrutement.<br><br>Le système intègre un processus de candidature structuré en plusieurs étapes, la gestion sécurisée des CV au format PDF, un tableau de bord analytique pour le suivi des candidatures et des notifications automatiques par email lors des changements de statut. Le projet comprend également la conception des interfaces sur Figma et le développement d'une architecture Full-Stack séparant le frontend React et le backend Spring Boot, avec PostgreSQL pour la persistance des données.
             </p>
             <div class="tags">
               <span>React 19</span>
               <span>TypeScript</span>
               <span>Vite</span>
               <span>Tailwind CSS v4</span>
-              <span>Spring Boot 3.5</span>
               <span>Java 25</span>
-              <span>JPA / Hibernate</span>
+              <span>Spring Boot 3.5</span>
+              <span>Spring Data JPA</span>
+              <span>Hibernate</span>
               <span>PostgreSQL 17</span>
               <span>Spring Mail</span>
               <span>Jakarta Validation</span>
+              <span>REST API</span>
               <span>Figma</span>
             </div>
             <a class="project-link" href="https://github.com/H-o-u-ss-e-m/Recruitment-system" target="_blank" rel="noreferrer">
@@ -833,9 +838,9 @@
               <span data-i18n="p2.meta">BACKEND · COMPLEXITÉ ALGORITHMIQUE</span>
             </div>
             <h3>Arabic MorphoLab</h3>
-            <p class="project-subtitle" data-i18n="p2.sub">Moteur d'analyse morphologique et décomposition de racines arabes</p>
+            <p class="project-subtitle" data-i18n="p2.sub">Moteur de Morphologie Computationnelle Arabe — Analyse des racines, classification verbale et génération morphologique</p>
             <p data-i18n="p2.desc">
-              Moteur linguistique haute performance analysant les racines arabes et dérivations morpho-syntaxiques. Exploitation d'<strong>Arbres AVL auto-équilibrés</strong> et de <strong>Tables de Hachage</strong> pour des recherches en O(log n). Architecture microservice <strong>Spring Boot</strong> et interface réactive <strong>React + TypeScript</strong>.
+              Conception et développement d’un moteur linguistique dédié à l’analyse morphologique de la langue arabe. Le système identifie les structures radicales et traite différentes catégories de verbes — <strong>Sahih, Mithal, Ajwaf, Naqis et Lafif</strong> — afin d’analyser leurs particularités morphologiques et leurs règles de dérivation.<br><br>La solution repose sur l’implémentation de <strong>structures de données optimisées</strong>, notamment des <strong>arbres AVL auto-équilibrés</strong> pour garantir des recherches en O(log n), ainsi qu’une <strong>table de hachage développée manuellement</strong> pour accélérer l’accès aux données avec une complexité moyenne en O(1). Cette approche met l’accent sur la maîtrise des algorithmes, l’organisation des données linguistiques et l’efficacité des opérations de recherche.<br><br>Le moteur est exposé à travers une architecture <strong>Spring Boot</strong>, avec une interface interactive développée en <strong>React et TypeScript</strong>, permettant de manipuler et visualiser les résultats de l’analyse morphologique.
             </p>
             <div class="tags">
               <span>Java</span>
@@ -843,7 +848,10 @@
               <span>React</span>
               <span>TypeScript</span>
               <span>AVL Trees</span>
+              <span>Hash Tables</span>
+              <span>Algorithm Design</span>
               <span>Data Structures</span>
+              <span>Computational Morphology</span>
             </div>
             <a class="project-link" href="https://github.com/H-o-u-ss-e-m/Arabic-Morphology-Application" target="_blank" rel="noreferrer">
               <span data-i18n="p2.link">Dépôt Application GitHub ↗</span>
@@ -903,19 +911,23 @@
               <span data-i18n="p3.meta">PFE INDUSTRIEL · SUMITOMO ELECTRIC</span>
             </div>
             <h3 data-i18n="p3.title">Système de Traçabilité Industrielle</h3>
-            <p class="project-subtitle" data-i18n="p3.sub">Gestion logistique automatisée avec robots autonomes PINTO</p>
+            <p class="project-subtitle" data-i18n="p3.sub">Plateforme intelligente de gestion logistique et de suivi des flux industriels avec robots autonomes PINTO</p>
             <p data-i18n="p3.desc">
-              Projet de fin d'études (Licence) : Conception d'une solution de suivi temps réel pour plus de <strong>500+ articles industriels</strong> dans les entrepôts de câblage automobile. Intégration de micro-frontends <strong>Angular</strong>, microservices <strong>.NET Core</strong>, base <strong>PostgreSQL</strong> et protocole bidirectionnel <strong>SOAP</strong> pour le guidage de robots PINTO.
+              Projet de fin d'études réalisé dans un environnement industriel du secteur automobile. Conception et développement d'une solution de digitalisation des opérations d'entrepôt permettant de gérer et de suivre en temps réel plus de <strong>500 articles industriels</strong>.<br><br>L'architecture repose sur des <strong>micro-frontends Angular</strong> et des <strong>microservices .NET Core</strong>, avec une base de données <strong>PostgreSQL</strong> pour centraliser les données logistiques. La solution intègre également les robots autonomes <strong>PINTO</strong> via des échanges SOAP, ainsi que des communications REST sécurisées par JWT et le protocole MQTT pour la synchronisation des événements.<br><br>Le système couvre notamment le suivi des articles, la gestion de leur emplacement et la coordination des flux logistiques avec les équipements robotisés, afin d'améliorer la visibilité et la fiabilité des opérations d'entrepôt.<br><br><strong>Projet de Fin d'Études — Licence Génie Logiciel et Systèmes d'Information · Mention Très Bien</strong>
             </p>
             <div class="tags">
               <span>.NET Core</span>
               <span>Angular</span>
               <span>PostgreSQL</span>
-              <span>SOAP Protocol</span>
-              <span>Robotic Integration</span>
               <span>Microservices</span>
+              <span>Micro-frontends</span>
+              <span>SOAP</span>
+              <span>REST API</span>
+              <span>JWT</span>
+              <span>MQTT</span>
+              <span>Robotique industrielle</span>
             </div>
-            <span class="project-link muted-link" data-i18n="p3.link">Projet de Fin d'Études — Mention Très Bien</span>
+            <span class="project-link muted-link" data-i18n="p3.link">Projet de Fin d'Études — Licence Génie Logiciel et Systèmes d'Information · Mention Très Bien</span>
           </div>
         </article>
 
@@ -970,24 +982,31 @@
           
           <div class="project-info">
             <div class="project-meta">
-              <span>JUL 2024</span>
-              <span data-i18n="p4.meta">SOLUTIONS D'ENTREPRISE</span>
+              <span>JUILLET 2024</span>
+              <span data-i18n="p4.meta">SOLUTIONS D'ENTREPRISE · DÉVELOPPEMENT FULL-STACK</span>
             </div>
             <h3 data-i18n="p4.title">Gestion des Congés RH</h3>
-            <p class="project-subtitle" data-i18n="p4.sub">Portail de gouvernance et circuits d'approbation numériques</p>
+            <p class="project-subtitle" data-i18n="p4.sub">Plateforme de gestion des absences et d'automatisation des circuits de validation</p>
             <p data-i18n="p4.desc">
-              Portail d'entreprise fluidifiant les demandes de congés, circuits de validation hiérarchiques et calendriers d'équipe. Séparation nette entre frontend <strong>Angular</strong>, API REST <strong>.NET</strong> et stockage <strong>SQL Server</strong> avec gestion stricte des autorisations RBAC.
+              Conception et développement d'un portail RH permettant de <strong>digitaliser et centraliser la gestion des congés</strong> au sein d'une organisation. La solution simplifie le dépôt des demandes, leur traitement selon les niveaux hiérarchiques et le suivi des absences à travers des calendriers d'équipe.<br><br>L'application repose sur une architecture séparant le <strong>frontend Angular</strong> de l'<strong>API REST ASP.NET</strong>, avec une base de données <strong>SQL Server</strong> pour la persistance des informations. Un système de contrôle d'accès basé sur les rôles (<strong>RBAC</strong>) encadre les autorisations et garantit que chaque utilisateur accède aux fonctionnalités correspondant à ses responsabilités.<br><br>Le projet vise à fluidifier les échanges entre collaborateurs et responsables RH, à structurer les workflows d'approbation et à améliorer la visibilité sur la planification des absences.
             </p>
             <div class="tags">
               <span>Angular</span>
-              <span>.NET API</span>
+              <span>TypeScript</span>
+              <span>ASP.NET</span>
+              <span>REST API</span>
               <span>SQL Server</span>
-              <span>RBAC Security</span>
+              <span>RBAC</span>
               <span>Tailwind CSS</span>
             </div>
-            <a class="project-link" href="https://github.com/H-o-u-ss-e-m/HRWebApp-Frontend-Angular--" target="_blank" rel="noreferrer">
-              <span data-i18n="p4.link">Dépôt Frontend GitHub ↗</span>
-            </a>
+            <div class="project-links-wrap" style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+              <a class="project-link" href="https://github.com/H-o-u-ss-e-m/HRWebApp-Backend-ASP.Net--" target="_blank" rel="noreferrer">
+                <span data-i18n="p4.linkBack">Dépôt Backend ASP.NET ↗</span>
+              </a>
+              <a class="project-link" href="https://github.com/H-o-u-ss-e-m/HRWebApp-Frontend-Angular--" target="_blank" rel="noreferrer">
+                <span data-i18n="p4.linkFront">Dépôt Frontend Angular ↗</span>
+              </a>
+            </div>
           </div>
         </article>
 
@@ -1389,6 +1408,6 @@
     <span>✓</span> <span data-i18n="contact.toast">Adresse email copiée dans le presse-papier !</span>
   </div>
 
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>
