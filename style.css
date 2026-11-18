@@ -1706,35 +1706,144 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.contact-email-wrapper {
-  display: inline-flex;
+.contact-emails-group {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.contact-email-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
   position: relative;
+  max-width: 100%;
 }
 
 .contact-email {
-  font-size: clamp(1.2rem, 2.8vw, 2rem);
-  font-weight: 700;
+  font-size: clamp(0.95rem, 2vw, 1.35rem);
+  font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-mono);
-  padding: 0.8rem 1.8rem;
+  padding: 0.75rem 1.35rem;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   transition: all var(--transition-normal);
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
+  max-width: 100%;
 }
 
 .contact-email:hover {
   border-color: var(--accent-purple);
   background: rgba(164, 118, 255, 0.12);
   box-shadow: 0 0 30px var(--accent-purple-glow);
-  transform: scale(1.02);
+  transform: translateY(-2px);
+}
+
+.contact-email.contact-email-isi:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.12);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.25);
+}
+
+.contact-email .email-tag {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(164, 118, 255, 0.15);
+  color: var(--accent-purple);
+  border: 1px solid rgba(164, 118, 255, 0.35);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.contact-email .email-tag.tag-isi {
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--accent-cyan);
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+.contact-email .email-addr {
+  white-space: nowrap;
+}
+
+.contact-email .email-arrow {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.contact-email:hover .email-arrow {
+  color: var(--text-primary);
+  transform: translate(2px, -2px);
+}
+
+/* Contact Phones */
+.contact-phones-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.phone-item .phone-link {
+  font-family: var(--font-mono);
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.phone-item .phone-link:hover {
+  color: var(--accent-cyan) !important;
+}
+
+.phone-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.phone-badge.whatsapp-tag {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366 !important;
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.phone-badge.whatsapp-tag:hover {
+  background: rgba(37, 211, 102, 0.3);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+.phone-badge.call-tag {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--text-muted) !important;
+  border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 .copy-btn {
@@ -3256,17 +3365,30 @@ img, svg, canvas {
     font-size: clamp(2rem, 7vw, 3rem);
   }
 
+  .contact-emails-group {
+    gap: 0.85rem;
+  }
+
   .contact-email-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    gap: 0.75rem;
+    justify-content: center;
+    gap: 0.6rem;
   }
 
   .contact-email {
-    font-size: 1.05rem;
+    font-size: clamp(0.78rem, 2.5vw, 0.95rem);
+    padding: 0.6rem 0.95rem;
+    gap: 0.5rem;
+  }
+
+  .contact-email .email-addr {
     word-break: break-all;
-    width: 100%;
-    text-align: center;
+    white-space: normal;
+  }
+
+  .phone-item {
+    justify-content: center;
   }
 
   .contact-bottom {

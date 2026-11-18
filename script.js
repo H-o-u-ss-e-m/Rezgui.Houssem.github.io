@@ -154,7 +154,10 @@ const i18n = {
     'contact.subtitle': '06 / ENTRER EN CONTACT',
     'contact.title': 'Donnons vie à vos<br><em>projets innovants.</em>',
     'contact.desc': 'Que vous ayez une opportunité de stage ingénieur, un défi en vision par ordinateur/IA, ou une architecture Cloud/DevOps à bâtir, je suis à votre écoute.',
-    'contact.phone': 'TÉLÉPHONE',
+    'contact.phone': 'TÉLÉPHONES',
+    'contact.personalEmail': 'Personnel',
+    'contact.isiEmail': 'ISI · UTM',
+    'contact.callTag': 'Appels directs',
     'contact.location': 'LOCALISATION',
     'contact.locVal': 'Tunis, Tunisie · Ouvert à l\'international & remote',
     'contact.profiles': 'PROFILS & CODE',
@@ -308,7 +311,10 @@ const i18n = {
     'contact.subtitle': '06 / LET\'S CONNECT',
     'contact.title': 'Ready to build<br><em>intelligent systems?</em>',
     'contact.desc': 'Whether you have an engineering internship opportunity, an applied AI challenge to solve, or an ambitious software project to collaborate on, I would love to hear from you.',
-    'contact.phone': 'PHONE',
+    'contact.phone': 'PHONE NUMBERS',
+    'contact.personalEmail': 'Personal',
+    'contact.isiEmail': 'ISI · UTM',
+    'contact.callTag': 'Direct Calls',
     'contact.location': 'LOCATION',
     'contact.locVal': 'Tunis, Tunisia · Open to Global Relocation & Remote',
     'contact.profiles': 'PROFILES & CODE',
@@ -703,20 +709,25 @@ function initCardTilt() {
    9. COPY EMAIL WITH TOAST
    -------------------------------------------------------------------------- */
 function initCopyEmail() {
-  const copyBtn = document.getElementById('copyEmailBtn');
+  const copyBtns = document.querySelectorAll('.copy-btn');
   const toast = document.getElementById('copyToast');
-  const emailText = 'rezguihoussem67@gmail.com';
 
-  if (!copyBtn) return;
+  if (!copyBtns.length) return;
 
-  copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(emailText).then(() => {
-      if (toast) {
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2500);
-      }
-    }).catch(() => {
-      window.location.href = `mailto:${emailText}`;
+  copyBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const emailText = btn.dataset.copy || btn.getAttribute('data-copy') || 'rezguihoussem67@gmail.com';
+      navigator.clipboard.writeText(emailText).then(() => {
+        if (toast) {
+          toast.textContent = currentLang === 'en' 
+            ? `Copied: ${emailText}` 
+            : `Adresse copiée : ${emailText}`;
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+      }).catch(() => {
+        window.location.href = `mailto:${emailText}`;
+      });
     });
   });
 }
