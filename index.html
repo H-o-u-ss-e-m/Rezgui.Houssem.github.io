@@ -15,7 +15,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <!-- Critical Inline Styles for CaféSense & Animations (Anti-Cache Fallback) -->
+  <style>
+    .anim-cafesense {
+      background: radial-gradient(circle at 60% 20%, rgba(46, 26, 16, 0.95), rgba(12, 9, 8, 0.98)) !important;
+      border-color: rgba(242, 163, 65, 0.35) !important;
+    }
+    .hud-tag.hud-coffee { color: #f2a341 !important; }
+    .hud-pulse.pulse-amber { background: #f2a341 !important; box-shadow: 0 0 8px #f2a341 !important; }
+    .cafesense-viewport {
+      position: relative; flex: 1; display: flex; flex-direction: column;
+      justify-content: space-between; padding: 0.65rem 0.85rem; overflow: hidden; width: 100%;
+    }
+    .cafesense-tables-grid {
+      display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.45rem !important; width: 100% !important;
+    }
+    .cafe-table-node {
+      display: flex !important; flex-direction: column !important; align-items: center !important;
+      justify-content: center !important; padding: 0.35rem 0.4rem !important; border-radius: 6px !important;
+      font-family: 'JetBrains Mono', monospace !important; text-align: center !important;
+    }
+    .cafe-table-node.table-free {
+      border: 1px dashed rgba(16, 185, 129, 0.6) !important;
+      background: rgba(16, 185, 129, 0.08) !important; color: #10b981 !important;
+    }
+    .cafe-table-node.table-occupied {
+      border: 1px solid rgba(239, 68, 68, 0.6) !important;
+      background: rgba(239, 68, 68, 0.12) !important; color: #f87171 !important;
+    }
+    .cafe-table-node.table-leaving {
+      border: 1px solid rgba(242, 163, 65, 0.6) !important;
+      background: rgba(242, 163, 65, 0.12) !important; color: #f2a341 !important;
+    }
+    .t-badge { font-size: 0.6rem !important; font-weight: 700 !important; display: block !important; }
+    .t-dist, .t-timer, .t-grace { font-size: 0.5rem !important; opacity: 0.85 !important; margin-top: 0.1rem !important; display: block !important; }
+    .cafesense-chat-preview {
+      display: flex !important; flex-direction: column !important; gap: 0.35rem !important;
+      width: 100% !important; margin-top: 0.4rem !important;
+    }
+    .cafe-bubble {
+      display: inline-flex !important; align-items: center !important; gap: 0.35rem !important;
+      border-radius: 6px !important; padding: 0.25rem 0.55rem !important; font-size: 0.62rem !important;
+      max-width: 90% !important;
+    }
+    .cafe-bubble.user-msg {
+      align-self: flex-start !important; background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important; color: #ead7c3 !important;
+    }
+    .cafe-bubble.ai-msg {
+      align-self: flex-end !important;
+      background: linear-gradient(135deg, rgba(242, 163, 65, 0.22), rgba(226, 89, 112, 0.22)) !important;
+      border: 1px solid rgba(242, 163, 65, 0.4) !important; color: #ffffff !important;
+    }
+  </style>
 </head>
 <body>
   <canvas id="bgCanvas" aria-hidden="true"></canvas>
@@ -1293,6 +1347,6 @@
     <span>✓</span> <span data-i18n="contact.toast">Adresse email copiée dans le presse-papier !</span>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2.2"></script>
 </body>
 </html>
